@@ -1,0 +1,26 @@
+import java.io.*;
+import java.util.*;
+public class Main {
+    public static int additionOfArray(int arr[], int n){
+        if(n<=0){
+            return 0;
+        }
+        return additionOfArray(arr, n-1)+ arr[n-1];
+    }
+    public static void main(String args[]) {
+        Scanner sc= new Scanner(System.in);
+        int t= sc.nextInt();
+        for(int j=1; j<=t; j++){
+            int n= sc.nextInt();
+            int[] brr= new int[n];
+
+            for(int i=0; i<n; i++){
+                brr[i]= sc.nextInt();
+            }
+            int ans= additionOfArray(brr, brr.length);
+            System.out.println("Case "+j+": "+ans);
+        }
+
+
+    }
+}
